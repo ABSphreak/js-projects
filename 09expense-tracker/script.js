@@ -38,7 +38,7 @@ let transactions =
   localStorage.getItem("transactions") !== null ? localStorageTransactions : [];
 
 // Add transaction
-const addTransaction = () => {
+function addTransaction(e) {
   e.preventDefault();
   if (text.value.trim() === "" || amount.value.trim() === "") {
     alert("Please add a text and amount!");
@@ -55,7 +55,7 @@ const addTransaction = () => {
     text.value = "";
     amount.value = "";
   }
-};
+}
 
 // Generate random ID
 function generateID() {
@@ -119,4 +119,4 @@ const init = () => {
 
 init();
 
-form.addEventListener("submit", addTransaction());
+form.addEventListener("submit", addTransaction);
